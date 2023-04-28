@@ -2,8 +2,11 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "AstroShop";
+import Greeting from '../components/Greeting.jsx';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<h2>Envios solo a Toledo</h2>
+	<Greeting client:load messages={["Epaaaaaa", "SIUUUU", "Howdy", "Hey there"]} />	
+	
 </BaseLayout>
