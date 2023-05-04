@@ -2,8 +2,8 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 banner:
     title: My Second Blog Post
-    color: "https://estaticos-cdn.sport.es/clip/b8488ff1-74e1-4ccc-b9b3-f1a7cd5a019c_alta-libre-aspect-ratio_default_0.jpg"
-    url: 
+    color: 
+    url: "https://estaticos-cdn.sport.es/clip/b8488ff1-74e1-4ccc-b9b3-f1a7cd5a019c_alta-libre-aspect-ratio_default_0.jpg"
 
 author: Astro Learner
 description: "After learning some Astro, I couldn't stop!"

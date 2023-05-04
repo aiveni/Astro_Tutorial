@@ -6,8 +6,10 @@ const { frontmatter } = Astro.props;
 <BaseLayout>
 <div class="container">
   <img src={frontmatter.banner.url} width= 100% alt={frontmatter.image.alt} />
+  <div class="centered">
+    {frontmatter.banner.title}</div>
 </div> 
-<div class="centered">{frontmatter.banner.title}</div>
+
 <p>Written by {frontmatter.author}</p>
 <p><em>{frontmatter.description}</em></p>
 <div class="tags">
