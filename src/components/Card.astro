@@ -1,0 +1,52 @@
+---
+const { title, url, description, image } = Astro.props;
+---
+
+<a href={url} class="card-link">
+  <div class="card">
+    <div class="card-img">
+        <img src = {image} alt = "image" width = "300" height = "200">
+    </div>
+    <div class="card-content">
+      <h2 class="card-title">{title}</h2>
+      <p class="card-description">{description}</p>
+    </div>
+  </div>
+</a>
+<style define:vars={{ image }}>
+  .card-link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .card {
+    width: 300px;
+    height: 400px;
+    background-color: black;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 16px;
+    color: white;
+    line-height: 1.5;
+  }
+</style>
