@@ -3,19 +3,22 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout>
+<div class="container">
+  <img src={frontmatter.banner.url} width= 100% alt={frontmatter.image.alt} />
+</div> 
+<div class="centered">{frontmatter.banner.title}</div>
 <p>Written by {frontmatter.author}</p>
 <p><em>{frontmatter.description}</em></p>
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
 <div class="tags">
     {frontmatter.tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
-  </div>
+</div>
 
 <slot/>
-</BaseLayout>
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
 
 <style>
     a {
@@ -36,4 +39,13 @@ const { frontmatter } = Astro.props;
       font-size: 1.15em;
       background-color: #F8FCFD;
     }
+
+    .centered {
+      font-size:xx-large;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   </style>
+  </BaseLayout>
