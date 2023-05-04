@@ -3,11 +3,11 @@ layout: ../../layouts/MarkdownPostLayout.astro
 banner:
     title: My Third Blog Post
     color:
-    url:
+    url: "https://as01.epimg.net/motor/imagenes/2020/05/08/formula_1/1588950539_604980_1588950682_noticia_normal.jpg"
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
 image: 
-    url: "https://astro.build/assets/blog/community-day/cover.jpg"
+    url: "https://i.redd.it/cc6twtgih5631.jpg"
     alt: "The word community with a heart."
 pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
