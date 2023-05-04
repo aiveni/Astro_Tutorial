@@ -1,6 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Third Blog Post
+banner:
+    title: My Third Blog Post
+    color:
+    url:
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"
 image: 

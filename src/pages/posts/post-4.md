@@ -1,6 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: My Fourth Blog Post
+banner:
+  title: My Fourth Blog Post
+  color:
+  url:
 author: Astro Learner
 description: "This post will show up on its own!"
 image: 
