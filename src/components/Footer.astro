@@ -1,31 +1,54 @@
 ---
 const platform = "github";
 const username = "withastro";
-import Social from './Social.astro';
-import Twitter from './logos/Twitter.astro'
-import Github from "./logos/Github.astro"
-import Youtube from "./logos/Youtube.astro"
+import Social from "./Social.astro";
+import Twitter from "./logos/Twitter.astro";
+import Github from "./logos/Github.astro";
+import Youtube from "./logos/Youtube.astro";
 ---
+
 <style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    background: linear-gradient(90deg, rgb(164, 164, 252) 0%, rgb(164, 164, 252) 0%, rgb(100, 47, 247) 100%);
-    width: 100%;
-    padding: 2rem;
-    bottom: 0;
-  }
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        background: linear-gradient(90deg, rgb(164, 164, 252) 0%, rgb(164, 164, 252) 0%, rgb(100, 47, 247) 100%);
+        width: 100%;
+        padding: 2rem;
+        bottom: 0;
+        justify-content: space-around;
+    }
+
+    .col-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text{
+        color: white;
+    }
+
+    footer > * {
+        flex-basis: 0;
+        flex-grow: 1;
+    }
 </style>
 <footer>
-  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
-  <Social name="Nanosexo" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-    <Twitter size="2rem" color="white"/>
-  </Social>
-  <Social name="github" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-    <Github size="2rem" color="white"/>
-  </Social>
-  <Social name="youtube" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >
-    <Youtube size="2rem" color="white"/>
-  </Social>
+    <div class="col-container">
+        <p class="text">See this project on <a href="https://github.com/aiveni/Astro_Tutorial">GitHub</a>!</p>
+    </div>
+
+    <div class="col-container">
+        <Social name="Nanosexo" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <Twitter size="2rem" color="white" />
+        </Social>
+        <Social name="github" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <Github size="2rem" color="white" />
+        </Social>
+        <Social name="youtube" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <Youtube size="2rem" color="white" />
+        </Social>
+    </div>
 </footer>
