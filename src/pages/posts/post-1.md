@@ -1,12 +1,15 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'My First Blog Post'
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
+banner: 
+    title: 'My First Blog Post'
+    color: 'white'
+    url: 'https://soymotor.com/sites/default/files/imagenes/noticia/piquet-crashgate-singapur-2008.jpg'
 image:
-    url: 'https://astro.build/assets/blog/astro-1-release-update/cover.jpeg' 
-    alt: 'The Astro logo with the word One.'
+    url: 'https://cdn-5.motorsport.com/images/mgl/Y97E8yG0/s8/f1-singapore-gp-2008-nico-rosberg-williams-fw30-toyota-2nd-position-fernando-alonso-renaul.jpg' 
+    alt: 'Alonso wins in Singapore.'
 tags: ["astro", "blogging", "learning in public"]
 ---
 # My First Blog Post
