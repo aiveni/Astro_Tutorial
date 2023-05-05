@@ -11,13 +11,15 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-P9X/6+fEmyhnNlStaa+pbOHwGxTd6qJjQi4Y5oXcL97X1mFffjQy5SXePXHw5o5n5Dq60K4p4l3cfevjgy1ujg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 		<title>Astro</title>
 	</head>
 	<body>
 		<Header />
-		<h1>{pageTitle}</h1>
+	<!-- -->	<h1>{pageTitle}</h1>
         <slot />
+		
 		<Footer/>
 		<script>
 		import "../scripts/menu.js";
