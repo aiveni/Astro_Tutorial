@@ -26,6 +26,7 @@ body{
 .container {
   padding: 1rem;
     max-width: 130ch;
+    width: 100%;
     min-height: 100vh;
     border-radius: 1rem;
     backdrop-filter: blur(3px);
@@ -74,16 +75,16 @@ h1 {
     font-size: 1.2rem;
     font-weight: bold;
     text-transform: uppercase;
+    border-radius: 20px;
+    border: 0.5px solid rgba(0, 0, 0, 0);
 }
 
-.nav-links a:hover, a:focus{
-  
-  border-radius: 20px;
+.nav-links a:hover, .nav-links a:focus{
+
   background-color: #fdc291;
   color: #fff;
   border: 0.5px solid #fff;
 
- 
 }
 
 .expanded {
@@ -143,7 +144,7 @@ h1 {
 }
 
 html.dark {
-    background-color: #0d0950;
+    background-image: url("b.jpg");
     color: #fff;
 }
 
@@ -151,9 +152,11 @@ html.dark {
   color: #fff;
 
 }
-.dark body{
-  background-color: #716af3;
-}
+
 .dark .logo p{
   color: #fff;
+}
+
+header{
+    width: 100%;
 }
