@@ -7,6 +7,7 @@ banner:
     title: 'My First Blog Post'
     color: white
     url: 'https://soymotor.com/sites/default/files/imagenes/noticia/piquet-crashgate-singapur-2008.jpg'
+    desk: "Asdsasadsaas"
 image:
     url: 'https://cdn-5.motorsport.com/images/mgl/Y97E8yG0/s8/f1-singapore-gp-2008-nico-rosberg-williams-fw30-toyota-2nd-position-fernando-alonso-renaul.jpg' 
     alt: 'Alonso wins in Singapore.'
