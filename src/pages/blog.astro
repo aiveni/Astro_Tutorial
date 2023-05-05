@@ -6,20 +6,30 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
 const pageTitle = "My Astro Learning Blog";
 ---
 
+<style>
+  .card-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
 
   <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    <!--<li><a href="/posts/post-1/">Post 1</a></li>
-      <li><a href="/posts/post-2/">Post 2</a></li>
-      <li><a href="/posts/post-3/">Post 3</a></li>
-      {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
+  <!--<li><a href="/posts/post-1/">Post 1</a></li>
+    <li><a href="/posts/post-2/">Post 2</a></li>
+    <li><a href="/posts/post-3/">Post 3</a></li>
+    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
+  <div class="card-container">
     {
       allPosts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.banner.title} />
+        //<BlogPost url={post.url} title={post.frontmatter.banner.title} />
         <Card url= {post.url} title = {post.frontmatter.banner.title} desk = "" image = {post.frontmatter.banner.url}>
         </Card>
       ))
     }
-  </ul>
+  </div>
+  
 </BaseLayout>
