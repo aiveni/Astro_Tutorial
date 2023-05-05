@@ -1,12 +1,25 @@
 ---
-const { platform, username } = Astro.props;
+const { name, url } = Astro.props;
 ---
+
 <style>
     a {
-      padding: 0.5rem 1rem;
-      color: white;
-     
-      text-decoration: none;
+        padding: 0.5rem 1rem;
+        color: white;
+        text-decoration: none;
+        height: min-content;
     }
-  </style>
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+
+    .social-holder {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+</style>
+
+<a href={url}>
+    <div class="social-holder">
+        <slot />
+        {name}
+    </div>
+</a>
