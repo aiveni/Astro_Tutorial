@@ -17,13 +17,21 @@ html {
 
 body{
   margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
-  width: 100%;
-  max-width: 80ch;
   padding: 1rem;
-  line-height: 1.5;
+    max-width: 130ch;
+    min-height: 100vh;
+    border-radius: 1rem;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+  justify-content: space-between;
   }
   
   * {
