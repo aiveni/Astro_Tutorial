@@ -4,9 +4,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "";
 import Greeting from '../components/Greeting.jsx';
 import Cuerpo from '../components/Cuerpo.astro';
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<!--<h2>Envios solo a Toledo</h2>-->
+	<Greeting client:load messages={["Aupa 👋👋👋", "Egunon", "asdasd"]} />
 	<Cuerpo/>
 </BaseLayout>

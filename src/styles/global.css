@@ -140,3 +140,18 @@ h1 {
 header {
     width: 100%;
 }
+
+.SaludoRandom {
+  color: #581e4f;
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Papyrus", "Comic Sans MS", cursive;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  text-shadow: 0 0 1px rgba(68, 0, 255, 0.3);
+}

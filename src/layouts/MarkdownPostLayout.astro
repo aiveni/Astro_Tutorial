@@ -1,80 +1,105 @@
 ---
 import { toAttributeString } from "astro/dist/runtime/server/render/util";
 
-import { toAttributeString } from "astro/dist/runtime/server/render/util";
-
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 const allPosts = await Astro.glob("../pages/posts/*.md");
-const myTags = frontmatter.tags
+const myTags = frontmatter.tags;
 const myPosts = allPosts.filter((post) => {
-  return myTags.some((tag) => post.frontmatter.tags.includes(tag) && post.frontmatter.banner.title != frontmatter.banner.title);
+  return myTags.some(
+    (tag) =>
+      post.frontmatter.tags.includes(tag) &&
+      post.frontmatter.banner.title != frontmatter.banner.title
+  );
 });
 
-import Card from '../components/Card.astro';
+import Card from "../components/Card.astro";
 ---
 
 <BaseLayout>
-<div class="container">
-  <img src={frontmatter.banner.url} width= 100% alt={frontmatter.image.alt} />
-  <div class="centered">
-    {frontmatter.banner.title}</div>
-</div> 
+  <div class="container">
+    <img
+      src={frontmatter.banner.url}
+      width="100%"
+      alt={frontmatter.image.alt}
+    />
+    <div class="centered">
+      {frontmatter.banner.title}
+    </div>
+  </div>
 
-<p>Written by {frontmatter.author}</p>
-<p><em>{frontmatter.description}</em></p>
-<div class="tags">
-    {frontmatter.tags.map((tag) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
-</div>
+  <p>Written by {frontmatter.author}</p>
+  <p><em>{frontmatter.description}</em></p>
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
 
-<slot/>
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <slot />
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
-
-<style>
+  <style>
     a {
-      color: #00539F;
+      color: #00539f;
     }
-  
+
     .tags {
-      display: flex; 
-      flex-wrap: wrap; 
-      margin: 0 auto;  
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
     }
-  
+
     .tag {
       margin: 0.25em;
       border: dotted 1px #a1a1a1;
-      border-radius: .5em;
-      padding: .5em 1em;
+      border-radius: 0.5em;
+      padding: 0.5em 1em;
       font-size: 1.15em;
-      background-color: #F8FCFD;
+      background-color: #f8fcfd;
     }
 
     .centered {
-      font-size:xx-large;
+      font-size: xx-large;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    .card-container{
-      display:flex;
+    .card-container {
+      display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
     }
+
+
+
+h2 {
+  border-bottom: 5px solid black; /* add a line below the heading */
+  padding-bottom: 10px; /* add some space between the heading and the line */
+}
+
   </style>
-    <div class="card-container">
-      {
-        myPosts.map((post) => (
-          //<BlogPost url={post.url} title={post.frontmatter.banner.title} />
-          <Card url= {post.url} title = {post.frontmatter.banner.title} desk = "" image = {post.frontmatter.banner.url}>
-          </Card>
-        ))
-      }
-    </div>
-  </BaseLayout>
+
+  
+  <h2>Related Posts</h2>
+  <div class="row card-container">
+    {
+      myPosts.map((post) => (
+        //<BlogPost url={post.url} title={post.frontmatter.banner.title} />
+        <Card
+          url={post.url}
+          title={post.frontmatter.banner.title}
+          description={post.frontmatter.description}
+          image={post.frontmatter.banner.url}
+        ></Card>
+      ))
+    }
+  </div>
+</BaseLayout>

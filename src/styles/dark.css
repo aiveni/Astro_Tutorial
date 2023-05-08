@@ -18,3 +18,7 @@ html.dark {
 .dark .social-holder svg {
     fill: white;
 }
+
+.dark h2 {
+    border-bottom-color: rgba(255, 255, 255, 0.247);
+}
