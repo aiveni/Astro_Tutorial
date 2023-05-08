@@ -11,7 +11,7 @@ banner:
 image:
     url: 'https://cdn-5.motorsport.com/images/mgl/Y97E8yG0/s8/f1-singapore-gp-2008-nico-rosberg-williams-fw30-toyota-2nd-position-fernando-alonso-renaul.jpg' 
     alt: 'Alonso wins in Singapore.'
-tags: ["astro", "blogging", "learning in public"]
+tags: [ "learning in public"]
 ---
 # My First Blog Post
 
