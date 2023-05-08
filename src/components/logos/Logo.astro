@@ -1,12 +1,12 @@
 ---
-const { size, color, path, viewBox } = Astro.props;
+const { size, path, viewBox } = Astro.props;
 ---
 
-<style define:vars={{ size, color }}>
+<style define:vars={{ size }}>
     svg {
         height: var(--size);
         width: min-content;
-        fill: var(--color);
+        fill: black;
     }
 </style><svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox}
     ><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
