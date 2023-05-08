@@ -1,41 +1,36 @@
 html {
-  
     background-color: #f1f5f9;
-    font-family: sans-serif; 
-    
-   
+    font-family: sans-serif;
+
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-image: url("a.jpg");
-    
-
-
 }
 
-body{
-  margin: 0;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
-  padding: 1rem;
+    padding: 1rem;
     max-width: 130ch;
     width: 100%;
     min-height: 100vh;
     border-radius: 1rem;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(7px);
     display: flex;
     flex-direction: column;
-  justify-content: space-between;
-  }
-  
-  * {
+    justify-content: space-between;
+}
+
+* {
     box-sizing: border-box;
 }
 
@@ -79,12 +74,11 @@ h1 {
     border: 0.5px solid rgba(0, 0, 0, 0);
 }
 
-.nav-links a:hover, .nav-links a:focus{
-
-  background-color: #fdc291;
-  color: #fff;
-  border: 0.5px solid #fff;
-
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #fdc291;
+    color: #fff;
+    border: 0.5px solid #fff;
 }
 
 .expanded {
@@ -92,71 +86,57 @@ h1 {
 }
 
 @media screen and (min-width: 636px) {
-  .nav-links {
-    float: right;
-    padding-top: 10px;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-.astro-OEMX5LE4{
-  float:right;
-  padding-top: 8px;
-}
-  .hamburger {
-    display: none;
-  }
+    .nav-links {
+        float: right;
+        padding-top: 10px;
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+    }
+    .astro-OEMX5LE4 {
+        float: right;
+        padding-top: 8px;
+    }
+    .hamburger {
+        display: none;
+    }
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-  .logo{
-    float: left;
-    padding-top: 8px;
-    padding-left: 80px;
-  }
-  .logo p{
-    font-size: 25px;
-    font-weight: bold;
-    color: #581e4f;
-  }
-
+    .nav-links a {
+        display: inline-block;
+        padding: 15px 20px;
+    }
+    .logo {
+        float: left;
+        padding-top: 8px;
+        padding-left: 80px;
+    }
+    .logo p {
+        font-size: 25px;
+        font-weight: bold;
+        color: #581e4f;
+    }
 }
-.textoPortada{
-  /**float: right;*/
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  display: flex;
-  align-items: center;
+.textoPortada {
+    /**float: right;*/
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    display: flex;
+    align-items: center;
 }
-.textoPortada img{
-  position: relative;
-  left: 100px;
-  margin-right: 200px;
-  transform: rotate(10deg);
-  display: right;
-  border-radius: 20%;
-  margin-bottom: 20px;
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-}
-
-html.dark {
-    background-image: url("b.jpg");
-    color: #fff;
+.textoPortada img {
+    position: relative;
+    left: 100px;
+    margin-right: 200px;
+    transform: rotate(10deg);
+    display: right;
+    border-radius: 20%;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
 
-.dark .nav-links a {
-  color: #fff;
-
-}
-
-.dark .logo p{
-  color: #fff;
-}
-
-header{
+header {
     width: 100%;
 }
