@@ -9,7 +9,7 @@ const { frontmatter } = Astro.props;
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const myTags = frontmatter.tags
 const myPosts = allPosts.filter((post) => {
-  return myTags.some((tag) => post.frontmatter.tags.includes(tag));
+  return myTags.some((tag) => post.frontmatter.tags.includes(tag) && post.frontmatter.banner.title != frontmatter.banner.title);
 });
 
 import Card from '../components/Card.astro';
