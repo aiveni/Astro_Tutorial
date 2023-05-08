@@ -71,7 +71,7 @@ const { title, url, description, image } = Astro.props;
   .card-content {
     width: 100%;
     height: 33.33%;
-    padding: 20px;
+    padding: 2rem;
     box-sizing: border-box;
     overflow: hidden;
     transition: height 0.5s;
@@ -88,8 +88,16 @@ const { title, url, description, image } = Astro.props;
     margin-bottom: 10px;
   }
 
+  .card:hover .card-description {
+    display: block;
+  }
+
   .card-description {
     font-size: 16px;
     line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+
   }
 </style>
