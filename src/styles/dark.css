@@ -1,0 +1,20 @@
+html.dark {
+    background-image: url("b.jpg");
+    color: #fff;
+}
+
+.dark .nav-links a {
+    color: #fff;
+}
+
+.dark .logo p {
+    color: #fff;
+}
+
+.dark .social-holder {
+    color: white;
+}
+
+.dark .social-holder svg {
+    fill: white;
+}

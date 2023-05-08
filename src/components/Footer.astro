@@ -1,6 +1,4 @@
 ---
-const platform = "github";
-const username = "withastro";
 import Social from "./Social.astro";
 import Twitter from "./logos/Twitter.astro";
 import Github from "./logos/Github.astro";
@@ -11,11 +9,12 @@ import Youtube from "./logos/Youtube.astro";
     footer {
         display: flex;
         gap: 1rem;
-        background: linear-gradient(90deg, rgb(164, 164, 252) 0%, rgb(164, 164, 252) 0%, rgb(100, 47, 247) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25));
         width: 100%;
         padding: 2rem;
         bottom: 0;
         justify-content: space-around;
+        backdrop-filter: blur(10px);
     }
 
     .col-container {
@@ -25,29 +24,29 @@ import Youtube from "./logos/Youtube.astro";
         justify-content: center;
     }
 
-    .text{
-        color: white;
-    }
-
     footer > * {
         flex-basis: 0;
         flex-grow: 1;
     }
+
+    p{
+        font-weight: bold;
+    }
 </style>
 <footer>
     <div class="col-container">
-        <p class="text">See this project on <a href="https://github.com/aiveni/Astro_Tutorial">GitHub</a>!</p>
+        <p>See this project on <a href="https://github.com/aiveni/Astro_Tutorial">GitHub</a>!</p>
     </div>
 
     <div class="col-container">
         <Social name="Nanosecso" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <Twitter size="2rem" color="white" />
+            <Twitter size="2rem"/>
         </Social>
         <Social name="github" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <Github size="2rem" color="white" />
+            <Github size="2rem" />
         </Social>
         <Social name="youtube" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <Youtube size="2rem" color="white" />
+            <Youtube size="2rem" />
         </Social>
     </div>
 </footer>
