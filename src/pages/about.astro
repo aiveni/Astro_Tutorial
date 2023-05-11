@@ -1,60 +1,39 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const pageTitle = "About";
-
-const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation: "Technical Writer",
-    hobbies: ["photography", "birdwatching", "baseball"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-
-const happy = true;
-const finished = true;
-const goal = 3;
-
-const skillColor = "navy";
+const pageTitle = "";
 ---
 
-<style define:vars={{ skillColor }}>
-    h1 {
-        color: purple;
-        font-size: 4rem;
-    }
-    .skill {
-        color: green;
-        color: var(--skillColor);
-        font-weight: bold;
-    }
-</style>
 <BaseLayout pageTitle={pageTitle}>
-    <h1>Chong ching</h1>
-    <h1>{pageTitle}</h1>
-    <h2>Bing chilling</h2>
-
-    <p>Here are a few facts about me:</p>
-    <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {
-            identity.hobbies.length >= 2 && (
-                <li>
-                    Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-                </li>
-            )
-        }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+    <section id="about">
+        <h2>Acerca de nosotros</h2>
+        <p>Somos un equipo de cuatro personas compartiendo alguno de nuestro hobbies para que podais disfrutarlas tanto como nostros bobitos :)</p>
+        
+        <div class="team">
+          <div class="member">
+            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 1">
+            <h3>Leire Echarri</h3>
+            <p>email: x@ikasle.ehu.eus</p>
+          </div>
+          
+          <div class="member">
+            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 2">
+            <h3>Unax Labaka</h3>
+            <p>email: x@ikasle.ehu.eus</p>
+          </div>
+          
+          <div class="member">
+            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 3">
+            <h3>Aitor Castaño</h3>
+            <p>email: x@ikasle.ehu.eus</p>
+          </div>
+          
+          <div class="member">
+            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 4">
+            <h3>Aitor Velaz</h3>
+            <p>email: x@ikasle.ehu.eus</p>
+          </div>
+        </div>
+      </section>
+      
 </BaseLayout>
