@@ -18,3 +18,10 @@ html.dark {
 .dark .social-holder svg {
     fill: white;
 }
+
+.dark #about p {
+    font-size: 18px;
+    color: #6b7479;
+    margin-bottom: 30px;
+  }
+  
