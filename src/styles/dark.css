@@ -19,6 +19,13 @@ html.dark {
     fill: white;
 }
 
+.dark #about p {
+    font-size: 18px;
+    color: #6b7479;
+    margin-bottom: 30px;
+  }
+  
+
 .dark h2 {
     border-bottom-color: rgba(255, 255, 255, 0.247);
 }
