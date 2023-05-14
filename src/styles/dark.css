@@ -1,12 +1,28 @@
+
+/*Fondo*/
 html.dark {
     background-image: url("b.jpg");
     color: #fff;
  }
-  
+
+ /*Header*/
   .dark .nav-links a {
     color: #fff;
   }
+
+  .dark .nav-links a:hover {
+    color: #00ff9c;
+  }
+
+
+  .dark .nav-links a:hover,
+  .dark .nav-links a:focus {
+      background-color: #00ff9c;
+      color: #fff;
+      border: 0.5px solid #fff;
+  }
   
+  /*Footer*/
   .dark .logo p {
     color: #fff;
   }
@@ -19,7 +35,24 @@ html.dark {
     fill: #fff;
  }
   
-  .dark #about p {
+  /*Index*/
+
+  .dark h1 {
+
+    color: #00ff9c; /* Neon Green */
+    text-shadow: 0 0 10px #00ff9c;
+  }
+
+  .dark .separator {
+    border: none;
+    border-top: 1px solid black;
+    margin: 30px 0;
+    border-color: #00ff9c; /* Neon Green */
+      box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
+  }
+
+  /*About*/
+  .dark p {
     font-size: 18px;
     color: #6b7479;
     margin-bottom: 30px;
@@ -39,4 +72,6 @@ html.dark {
     border-bottom-color: rgba(255, 255, 255, 0.247);
     text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
   }
+
+  
   
