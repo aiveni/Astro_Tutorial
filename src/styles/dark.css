@@ -1,31 +1,42 @@
 html.dark {
     background-image: url("b.jpg");
     color: #fff;
-}
-
-.dark .nav-links a {
+ }
+  
+  .dark .nav-links a {
     color: #fff;
-}
-
-.dark .logo p {
+  }
+  
+  .dark .logo p {
     color: #fff;
-}
-
-.dark .social-holder {
-    color: white;
-}
-
-.dark .social-holder svg {
-    fill: white;
-}
-
-.dark #about p {
+  }
+  
+  .dark .social-holder {
+    color: #fff;
+  }
+  
+  .dark .social-holder svg {
+    fill: #fff;
+ }
+  
+  .dark #about p {
     font-size: 18px;
     color: #6b7479;
     margin-bottom: 30px;
   }
   
-
-.dark h2 {
+  .dark #about h2 {
+    color: #00ff9c; /* Neon Green */
+    text-shadow: 0 0 10px #00ff9c;
+  }
+  
+  .dark .marco {
+    border-color: #00ff9c; /* Neon Green */
+    box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
+  }
+  
+  .dark h2 {
     border-bottom-color: rgba(255, 255, 255, 0.247);
-}
+    text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
+  }
+  

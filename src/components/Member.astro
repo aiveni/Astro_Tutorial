@@ -1,0 +1,36 @@
+---
+const {img, nombre, email} = Astro.props;
+---
+
+<div class="member">
+    <img src= {img}>
+    <h3>{nombre}</h3>
+    <p>{email}</p>
+  </div>
+
+
+  <style>
+    .member {
+  margin: 20px;
+  width: 300px;
+}
+
+.member img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.member h3 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.member p {
+  font-size: 18px;
+  color: #888;
+}
+  </style>

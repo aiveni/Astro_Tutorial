@@ -7,7 +7,7 @@ export default function Greeting({messages}) {
   
   return (
     <div> 
-      <h1 className='SaludoRandom'>{greeting}! Bienvenido a Astroblog!!!!!</h1>
+      <h1 className='SaludoRandom'>{greeting}, Bienvenido a Astroblog!!!!!</h1>
     </div>
   );
 }
