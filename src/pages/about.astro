@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Member from "../components/Member.astro";
 
 const pageTitle = "";
 ---
@@ -7,32 +8,18 @@ const pageTitle = "";
 <BaseLayout pageTitle={pageTitle}>
     <section id="about">
         <h2>Acerca de nosotros</h2>
-        <p>Somos un equipo de cuatro personas compartiendo alguno de nuestro hobbies para que podais disfrutarlas tanto como nostros bobitos :)</p>
-        
+        <div class = marco>
+        <p>Somos un apasionado grupo de estudiantes entusiastas que han unido fuerzas para crear un blog único. Nuestro objetivo es explorar y compartir diferentes hobbies que cualquier persona puede hacer en su tiempo libre. El blog ha sido creado con el poderoso y moderno framewrok Astro, el cual nos ha permitido crear un espacio en línea dedicado a brindar información y entusiasmo sobre temas apasionantes.</p>
+        </div>
         <div class="team">
-          <div class="member">
-            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 1">
-            <h3>Leire Echarri</h3>
-            <p>email: x@ikasle.ehu.eus</p>
-          </div>
+
+          <Member img= "https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" nombre="Leire Echarri" email="lecharri001@ehu.eus"></Member>
+          <Member img= "https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" nombre="Unax Labaka" email="ulabaka001@ehu.eus"></Member>
+          <Member img= "https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" nombre="Aitor Castaño" email="acastano016@ehu.eus"></Member>
+          <Member img= "https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" nombre=" Aitor Velaz" email="@ehu.eus"></Member>
           
-          <div class="member">
-            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 2">
-            <h3>Unax Labaka</h3>
-            <p>email: x@ikasle.ehu.eus</p>
-          </div>
           
-          <div class="member">
-            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 3">
-            <h3>Aitor Castaño</h3>
-            <p>email: x@ikasle.ehu.eus</p>
-          </div>
           
-          <div class="member">
-            <img src="https://assets.stickpng.com/images/585e4beacb11b227491c3399.png" alt="Foto de miembro del equipo 4">
-            <h3>Aitor Velaz</h3>
-            <p>email: x@ikasle.ehu.eus</p>
-          </div>
         </div>
       </section>
       
