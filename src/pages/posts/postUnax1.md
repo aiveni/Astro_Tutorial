@@ -4,11 +4,11 @@ pubDate: 2023-05-14
 description: 'Si buscas un pasatiempo donde te muevas rapido puedas conocer sitios de tu ciudad/pueblo y donde puedes aprender trucos impresionantes el skateboarding es para ti!.'
 author: 'Unax Labaka'
 banner: 
-    title: 'Skateboarding/Longboarding'
+    title: 'Skateboarding/ Longboarding'
     color: white
-    url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjr2sNtM18YnxnmBvQ6li4WJgMoFrGB7SvoRzI1H6E_Iae2sXN7Ja7xk9fai5QVZU03Y&usqp=CAU'
+    url: 'https://cdn.pixabay.com/photo/2018/07/14/23/08/skateboard-3538632_1280.jpg'
 image:
-    url: 'https://upload.wikimedia.org/wikipedia/en/5/5d/Msulbclubaction1.jpg' 
+    url:   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjr2sNtM18YnxnmBvQ6li4WJgMoFrGB7SvoRzI1H6E_Iae2sXN7Ja7xk9fai5QVZU03Y&usqp=CAU'
     alt: 'Frenando con las manos.'
 tags: [ "Skateboard" , "Aire libre" , "Velocidad"]
 ---
@@ -22,9 +22,11 @@ Publicado el 14/5/2023
 
 El skateboarding y el longboarding son deportes que consisten en deslizarse sobre una tabla con ruedas. El skateboarding se enfoca en realizar trucos y acrobacias en diferentes tipos de terreno, como parques de skate o calles urbanas. Por otro lado, el longboarding se centra en el desplazamiento y la velocidad, utilizando tablas más largas y estables, ideales para recorrer distancias largas o descender colinas.
 
+
 ## Variantes del skateboarding y longboarding
 
 Dentro del skateboarding, existen diversas modalidades, como el street, el vert, el freestyle y el bowl. Cada una tiene su enfoque particular y ofrece una experiencia única. En cuanto al longboarding, se pueden encontrar modalidades como el downhill, el freeride y el carving, cada una con su estilo de conducción y desafíos propios.
+
 
 ## Ventajas de practicar skateboarding y longboarding
 

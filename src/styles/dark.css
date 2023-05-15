@@ -73,5 +73,12 @@ html.dark {
     text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
   }
 
-  
+  .dark .card-description {
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: none;
+
+  }
   
