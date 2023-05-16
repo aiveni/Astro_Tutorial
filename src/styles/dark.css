@@ -49,7 +49,7 @@ html.dark {
 }
 
 /*About*/
-.dark p {
+.dark #about p {
     font-size: 18px;
     color: #6b7479;
     margin-bottom: 30px;
@@ -78,6 +78,7 @@ html.dark {
     display: none;
 }
 
+/* User logo */
 .dark #userIcon:hover{
   background-color: #00ff9c;
 }

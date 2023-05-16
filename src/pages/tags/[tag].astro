@@ -10,7 +10,6 @@ const posts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
-    {console.log(posts)}
     {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.banner.title}/>)}
   </ul>
 </BaseLayout>
