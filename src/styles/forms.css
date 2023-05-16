@@ -1,0 +1,32 @@
+.form-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="password"],
+input[type="email"] {
+    border-radius: 7px;
+    padding: 0.5rem;
+    border: solid rgb(58, 58, 58) 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    max-width: 20rem;
+    width: 75vw;
+}
+
+.error-message{
+    color: rgb(195, 21, 21);
+    margin: 0.25rem 0 0 0;
+}

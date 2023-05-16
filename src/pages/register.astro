@@ -2,6 +2,8 @@
 import { createUser } from "../db/insert.js";
 import { userExists } from "../db/select.js"
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/forms.css"
+import "../styles/dark.css"
 
 let errors = {
     username: "",
@@ -21,44 +23,10 @@ if (Astro.request.method === "POST") {
         createUser(username, password, email)
         return Astro.redirect("/")
     }
-
 }
 ---
 
-<style>
-    .form-container {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .form-container form {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    input[type="text"],
-    input[type="submit"],
-    input[type="password"] {
-        border-radius: 7px;
-        padding: 0.5rem;
-        border: solid rgb(58, 58, 58) 2px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        max-width: 20rem;
-        width: 75vw;
-    }
-
-    .error-message{
-        color: rgb(195, 21, 21);
-        margin: 0.25rem 0 0 0;
-    }
-</style>
-
-<BaseLayout pageTitle="Login page">
+<BaseLayout>
     <div class="form-container">
         <form action="./login" method="post">
             <label for="username">
@@ -77,7 +45,7 @@ if (Astro.request.method === "POST") {
             <label for="email">
                 Email
                 <br />
-                <input type="text" name="email" id="email" required />
+                <input type="email" name="email" id="email" required />
             </label>
 
             <input type="submit" id="registerButton" value="Register" />

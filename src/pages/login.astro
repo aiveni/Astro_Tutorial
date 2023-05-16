@@ -1,0 +1,47 @@
+---
+import "../styles/forms.css";
+import "../styles/dark.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { correctLogin, getAllUsers } from "../db/select.js";
+import CryptoJS from "crypto-js";
+
+let error = "";
+
+getAllUsers()
+
+if (Astro.request.method === "POST") {
+    const data = await Astro.request.formData();
+    const username = data.get("username");
+    const password = data.get("password");
+
+    if (await correctLogin(username, password)) {
+        const secretKey = import.meta.env.SECRET_KEY;
+        const encryptedUsername = CryptoJS.AES.encrypt(username, secretKey).toString();
+        Astro.cookies.set("user", encryptedUsername, {"maxAge": 60 * 60 * 24 * 7}) // One week
+        return Astro.redirect("/");
+    } else {
+        error = "Wrong login";
+    }
+}
+---
+
+<BaseLayout>
+    <div class="form-container">
+        <form action="./login" method="post">
+            <label for="username">
+                Username
+                <br />
+                <input type="text" name="username" id="username" required />
+                {error && <p class="error-message">{error}</p>}
+            </label>
+
+            <label for="password">
+                Password
+                <br />
+                <input type="password" name="password" id="password" required />
+            </label>
+
+            <input type="submit" id="loginButton" value="Login" />
+        </form>
+    </div>
+</BaseLayout>
