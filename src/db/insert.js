@@ -7,4 +7,19 @@ const createUser = (username, password, email) => {
     db.close()
 }
 
-export {createUser}
+const addComment = (comment, post, user) => {
+    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    return new Promise((resolve, reject) => {
+        db.run(`INSERT INTO Comment (comment, post, "user") VALUES('${comment}', ${post}, '${user}');`, (error) => {
+            if (error) {
+                reject(error);
+            } else {
+                db.close()
+                resolve()
+            }
+        })
+    })
+
+}
+
+export { createUser, addComment }

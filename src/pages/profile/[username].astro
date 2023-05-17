@@ -12,18 +12,11 @@ const authoredPosts = allPosts.filter((post) => post.frontmatter.author == usern
 const pageTitle = userExists ? `${username}'s profile` : `User "${username}" doesn't exist`;
 ---
 
-<style>
-    h2 {
-        border-bottom: 5px solid black; /* add a line below the heading */
-        padding-bottom: 10px; /* add some space between the heading and the line */
-    }
-</style>
-
 <BaseLayout pageTitle={pageTitle}>
     {
         userExists ? (
             <>
-                <h2>Authored posts:</h2>
+                <h2 class="section-header">Authored posts:</h2>
                 <CardContainer posts={authoredPosts}/>
             </>
         ) : (

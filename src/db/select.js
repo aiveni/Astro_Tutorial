@@ -6,7 +6,7 @@ export const userExists = (username) => {
         db.get("SELECT * FROM User WHERE username = ?", [username], function (err, row) {
             if (err) {
                 console.log(err.message);
-                reject(false)
+                reject(err)
             } else if (row) {
                 db.close()
                 resolve(true)
@@ -24,7 +24,7 @@ export const correctLogin = (username, password) => {
         db.get("SELECT * FROM User WHERE username = ? and password = ?", [username, password], function (err, row) {
             if (err) {
                 console.log(err.message);
-                reject(false)
+                reject(err)
             } else if (row) {
                 db.close()
                 resolve(true)
@@ -42,9 +42,23 @@ export const getAllUsers = () => {
         db.all("SELECT username FROM User", [], function (err, rows) {
             if (err) {
                 console.log(err.message);
-                reject(false)
+                reject(err)
             } else {
                 resolve(rows.map((u) => u.username))
+            }
+        });
+    })
+}
+
+export const getComments = (post) => {
+    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    return new Promise((resolve, reject) => {
+        db.all("SELECT comment, user FROM Comment WHERE post = ?", [post], function (err, rows) {
+            if (err) {
+                console.log(err.message);
+                reject(err)
+            } else {
+                resolve(rows)
             }
         });
     })

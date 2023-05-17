@@ -11,6 +11,7 @@ image:
     url: 'https://cdn-5.motorsport.com/images/mgl/Y97E8yG0/s8/f1-singapore-gp-2008-nico-rosberg-williams-fw30-toyota-2nd-position-fernando-alonso-renaul.jpg' 
     alt: 'Alonso wins in Singapore.'
 tags: [ "learning in public"]
+id: 1
 ---
 # My First Blog Post
 

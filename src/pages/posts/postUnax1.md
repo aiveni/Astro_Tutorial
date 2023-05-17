@@ -11,6 +11,7 @@ image:
     url:   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjr2sNtM18YnxnmBvQ6li4WJgMoFrGB7SvoRzI1H6E_Iae2sXN7Ja7xk9fai5QVZU03Y&usqp=CAU'
     alt: 'Frenando con las manos.'
 tags: [ "Skateboard" , "Aire libre" , "Velocidad"]
+id: 5
 ---
 # Skateboarding/Longboarding
 
