@@ -2,7 +2,10 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-import "../styles/dark.css"
+import "../styles/dark.css";
+
+const user = Astro.cookies.get("user");
+const userLogged = user.value != undefined;
 const { pageTitle } = Astro.props;
 ---
 
@@ -18,13 +21,30 @@ const { pageTitle } = Astro.props;
     <body>
         <div class="container">
             <Header />
-            {pageTitle && <h1>{pageTitle}</h1>}
+            {pageTitle && <h1 class="page-title">{pageTitle}</h1>}
             <slot />
+            {
+                userLogged && (
+                    <a href="" class="green-link" id="greenLink">
+                        Log out
+                    </a>
+                )
+            }
         </div>
-		<Footer/>
+        <Footer />
 
         <script>
             import "../scripts/menu.js";
         </script>
     </body>
 </html>
+
+<script>
+    const greenLink = document.getElementById("greenLink");
+    if (greenLink) {
+        greenLink.addEventListener("click", () => {
+            console.log("mereketengue");
+            document.cookie = "user=;Path=/;Expires= 11 Sep 2001 00:00:00 GMT;";
+        });
+    }
+</script>

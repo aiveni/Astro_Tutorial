@@ -10,7 +10,12 @@ image:
     url: "https://cdn-9.motorsport.com/images/amp/2yopPw96/s1000/f1-monaco-gp-1982-riccardo-pat.jpg"
     alt: "Patrese liderando seguido del Renault de Prost"
 pubDate: 2022-07-15
+<<<<<<< HEAD
 tags: ["hobby", "Formula 1", "races", "Alonso", "Schumacher", "Senna", "Prost", "Sebastian Vettel"]
+=======
+tags: ["astro", "learning in public", "setbacks", "community"]
+id: 3
+>>>>>>> 20cbde88415da33f3e0660234cb1cd533d02c287
 ---
 Si acabas de descubrir la Formula 1 y tienes interes en ver grandes premios anteriores, en este post voy a recomendar algunos de mis favoritos. Cabe destacar que es una lista sesgada por mis preferencias.
 
