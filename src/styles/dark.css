@@ -1,84 +1,88 @@
-
 /*Fondo*/
 html.dark {
     background-image: url("b.jpg");
     color: #fff;
- }
+}
 
- /*Header*/
-  .dark .nav-links a {
+/*Header*/
+.dark .nav-links a {
     color: #fff;
-  }
+}
 
-  .dark .nav-links a:hover {
+.dark .nav-links a:hover {
     color: #00ff9c;
-  }
+}
 
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+    background-color: #00ff9c;
+    color: #fff;
+    border: 0.5px solid #fff;
+}
 
-  .dark .nav-links a:hover,
-  .dark .nav-links a:focus {
-      background-color: #00ff9c;
-      color: #fff;
-      border: 0.5px solid #fff;
-  }
-  
-  /*Footer*/
-  .dark .logo p {
+/*Footer*/
+.dark .logo p {
     color: #fff;
-  }
-  
-  .dark .social-holder {
+}
+
+.dark .social-holder {
     color: #fff;
-  }
-  
-  .dark .social-holder svg {
+}
+
+.dark .social-holder svg {
     fill: #fff;
- }
-  
-  /*Index*/
+}
 
-  .dark h1 {
+/*Index*/
 
+.dark h1 {
     color: #00ff9c; /* Neon Green */
     text-shadow: 0 0 10px #00ff9c;
-  }
+}
 
-  .dark .separator {
+.dark .separator {
     border: none;
     border-top: 1px solid black;
     margin: 30px 0;
     border-color: #00ff9c; /* Neon Green */
-      box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
-  }
+    box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
+}
 
-  /*About*/
-  .dark p {
+/*About*/
+.dark #about p {
     font-size: 18px;
     color: #6b7479;
     margin-bottom: 30px;
-  }
-  
-  .dark #about h2 {
+}
+
+.dark #about h2 {
     color: #00ff9c; /* Neon Green */
     text-shadow: 0 0 10px #00ff9c;
-  }
-  
-  .dark .marco {
+}
+
+.dark .marco {
     border-color: #00ff9c; /* Neon Green */
     box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
-  }
-  
-  .dark h2 {
+}
+
+.dark h2 {
     border-bottom-color: rgba(255, 255, 255, 0.247);
     text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
-  }
+}
 
-  .dark .card-description {
+.dark .card-description {
     font-size: 14px;
     line-height: 1.5;
     overflow: hidden;
     text-overflow: ellipsis;
     display: none;
+}
 
-  }
-  
+/* User logo */
+.dark #userIcon:hover{
+  background-color: #00ff9c;
+}
+
+.dark #userIcon svg{
+  fill: white;
+}

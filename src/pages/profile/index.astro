@@ -1,0 +1,15 @@
+---
+import CryptoJS from "crypto-js";
+import { userExists } from "../../db/select.js"
+
+const encryptedUsername = Astro.cookies.get("user").value
+
+if (encryptedUsername){
+    const secretKey = import.meta.env.SECRET_KEY;
+    const username = CryptoJS.AES.decrypt(encryptedUsername, secretKey).toString(CryptoJS.enc.Utf8)
+    if(await userExists(username)){
+        return Astro.redirect(`/profile/${username}`)
+    }
+}
+return Astro.redirect("/login")
+---

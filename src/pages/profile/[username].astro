@@ -1,0 +1,11 @@
+---
+import { getAllUsers } from "../../db/select.js";
+
+const { username } = Astro.params;
+const allUsers = await getAllUsers()
+const userExists = allUsers.includes(username)
+---
+
+<p>
+    {userExists ? username : "Eres tonto o te pegan en casa?"}
+</p>
