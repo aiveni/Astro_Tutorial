@@ -39,6 +39,10 @@ h1 {
     font-size: 2.5rem;
 }
 
+.page-title{
+    text-align: center;
+}
+
 /* nav styles */
 .hamburger {
     padding-right: 20px;

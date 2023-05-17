@@ -1,15 +1,22 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPost from '../../components/BlogPost.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPost from "../../components/BlogPost.astro";
+import Card from "../../components/Card.astro";
+import CardContainer from "../../components/CardContainer.astro";
 
 const { tag } = Astro.params;
-const allPosts = await Astro.glob('../posts/*.md');
+const allPosts = await Astro.glob("../posts/*.md");
 const posts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
-
 ---
+
+<style>
+    h2 {
+        border-bottom: 5px solid black; /* add a line below the heading */
+        padding-bottom: 10px; /* add some space between the heading and the line */
+    }
+</style>
+
 <BaseLayout pageTitle={tag}>
-  <p>Posts tagged with {tag}</p>
-  <ul>
-    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.banner.title}/>)}
-  </ul>
+    <h2>Posts tagged with {tag}</h2>
+    <CardContainer posts={posts} />
 </BaseLayout>

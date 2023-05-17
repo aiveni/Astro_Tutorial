@@ -15,6 +15,7 @@ const myPosts = allPosts.filter((post) => {
 });
 
 import Card from "../components/Card.astro";
+import CardContainer from "../components/CardContainer.astro";
 ---
 
 <BaseLayout>
@@ -71,12 +72,6 @@ import Card from "../components/Card.astro";
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
 
 
 
@@ -87,19 +82,11 @@ h2 {
 
   </style>
 
+  {
+    myPosts && <>
+      <h2>Related Posts</h2>
+      <CardContainer posts={myPosts}/>
+    </>
+  }
   
-  <h2>Related Posts</h2>
-  <div class="row card-container">
-    {
-      myPosts.map((post) => (
-        //<BlogPost url={post.url} title={post.frontmatter.banner.title} />
-        <Card
-          url={post.url}
-          title={post.frontmatter.banner.title}
-          description={post.frontmatter.description}
-          image={post.frontmatter.banner.url}
-        ></Card>
-      ))
-    }
-  </div>
 </BaseLayout>
