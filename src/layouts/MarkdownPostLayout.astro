@@ -74,7 +74,7 @@ const comments = await getComments(frontmatter.id)
 
 
     {
-        myPosts && (
+        myPosts.length > 0 && (
             <>
                 <h2 class="section-header">Related Posts</h2>
                 <CardContainer posts={myPosts} />
