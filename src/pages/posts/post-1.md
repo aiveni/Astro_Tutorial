@@ -12,10 +12,8 @@ image:
     alt: 'Alonso wins in Singapore.'
 <<<<<<< HEAD
 tags: [ "Hobby", "Formula 1", "introducción"]
-=======
 tags: [ "learning in public"]
 id: 1
->>>>>>> 20cbde88415da33f3e0660234cb1cd533d02c287
 ---
 # Introducción a la F1
 
