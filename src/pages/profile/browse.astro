@@ -1,5 +1,5 @@
 ---
-import { getAllUsers } from "../../db/select.js";
+import { getAllUsers } from "../../db/sqlite/select.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allUsers = await getAllUsers();
