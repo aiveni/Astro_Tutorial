@@ -1,9 +1,6 @@
 import { Client } from "pg"
-console.log(process.env.NODE_ENV)
-if (process.env.NODE_ENV !== 'production') {
-    import("node:process")
-    import("dotenv").then((dotenv) => dotenv.config())
-}
+console.log("A")
+console.log(process.env.DATABASE_URL)
 
 
 export const getAllUsers = async () => {
