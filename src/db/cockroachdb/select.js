@@ -1,6 +1,6 @@
 import { Client } from "pg"
-import process from 'node:process';
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NETLIFY !== 'true') {
+    import("node:process")
     import("dotenv").then((dotenv) => dotenv.config())
 }
 
@@ -31,7 +31,7 @@ export const userExists = async (username) => {
                 if (err) {
                     console.log(err)
                     reject(err)
-                } else if(res.rows){
+                } else if(res.rows.length > 0){
                     resolve(true)
                 }else{
                     resolve(false)
@@ -50,7 +50,7 @@ export const correctLogin = async (username, password) => {
                 if (err) {
                     console.log(err)
                     reject(err)
-                } else if(res.rows){
+                } else if(res.rows.length > 0){
                     resolve(true)
                 }else{
                     resolve(false)
