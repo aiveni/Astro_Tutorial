@@ -1,6 +1,4 @@
 import { Client } from "pg"
-console.log("A")
-console.log(process.env.DATABASE_URL)
 
 
 export const getAllUsers = async () => {
@@ -52,6 +50,24 @@ export const correctLogin = async (username, password) => {
                     resolve(true)
                 }else{
                     resolve(false)
+                }
+            })
+        })
+    })
+}
+
+export const getComments = async (post) => {
+    const client = new Client(process.env.DATABASE_URL)
+    return new Promise((resolve, reject) => {
+        client.connect().then((_) => {
+            client.query(`select "comment", "user" from public."Comment" where post = ${post}`, (err, res) => {
+                client.end()
+                if (err) {
+                    console.log(err)
+                    reject(err)
+                } else{
+                    console.log(res.rows)
+                    resolve(res.rows)
                 }
             })
         })

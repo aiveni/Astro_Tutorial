@@ -4,8 +4,8 @@ import CryptoJS from "crypto-js";
 import BaseLayout from "./BaseLayout.astro";
 import CardContainer from "../components/CardContainer.astro";
 import Comment from "../components/Comment.astro"
-import { addComment } from "../db/sqlite/insert.js";
-import { userExists, getComments } from "../db/sqlite/select.js";
+import { addComment } from "../db/cockroachdb/insert.js";
+import { userExists, getComments } from "../db/cockroachdb/select.js";
 
 const { frontmatter } = Astro.props;
 const allPosts = await Astro.glob("../pages/posts/*.md");
