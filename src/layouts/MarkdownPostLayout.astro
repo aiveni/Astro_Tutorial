@@ -65,7 +65,7 @@ const comments = await getComments(frontmatter.id)
 
 	{user == undefined && <p style="color:rgb(195, 21, 21);">Log in to submit a comment</p>}
     <form class="comment-form" method="POST">
-        <input type="text" name="comment" />
+        <input type="text" name="comment" autocomplete="off"/>
         <input type="hidden" value={user} name="user" />
         <input type="hidden" value={frontmatter.id} name="post" />
         {user == undefined ? <input type="submit" value="Comment" disabled /> : <input type="submit" value="Comment" />}

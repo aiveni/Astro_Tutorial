@@ -14,13 +14,12 @@ const pageTitle = userExists ? `${username}'s profile` : `User "${username}" doe
 
 <BaseLayout pageTitle={pageTitle}>
     {
-        userExists ? (
+        userExists && (
             <>
                 <h2 class="section-header">Authored posts:</h2>
-                <CardContainer posts={authoredPosts}/>
+                <CardContainer posts={authoredPosts} />
             </>
-        ) : (
-            <h2>Browse other users</h2>
         )
     }
+    <a href="./browse" class="green-link">Browse for other users</a>
 </BaseLayout>
