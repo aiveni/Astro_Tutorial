@@ -1,6 +1,6 @@
 ---
 import CryptoJS from "crypto-js";
-import { userExists } from "../../db/sqlite/select.js"
+import { userExists } from "../../db/cockroachdb/select.js"
 
 const encryptedUsername = Astro.cookies.get("user").value
 
