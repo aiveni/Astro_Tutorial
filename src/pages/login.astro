@@ -2,7 +2,7 @@
 import "../styles/forms.css";
 import "../styles/dark.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { correctLogin, getAllUsers } from "../db/select.js";
+import { correctLogin, getAllUsers } from "../db/cockroachdb/select.js";
 import CryptoJS from "crypto-js";
 
 let error = "";
