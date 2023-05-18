@@ -6,6 +6,7 @@ import CardContainer from "../../components/CardContainer.astro";
 
 const { username } = Astro.params;
 const allUsers = await getAllUsers();
+console.log(allUsers)
 const userExists = allUsers.includes(username);
 const allPosts = await Astro.glob("../posts/*.md");
 const authoredPosts = allPosts.filter((post) => post.frontmatter.author == username);

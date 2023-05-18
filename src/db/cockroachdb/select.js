@@ -11,7 +11,7 @@ export const getAllUsers = async () => {
                     console.log(err)
                     reject(err)
                 } else {
-                    resolve(res.rows)
+                    resolve(res.rows.map((user) => user.username))
                 }
             })
         })
