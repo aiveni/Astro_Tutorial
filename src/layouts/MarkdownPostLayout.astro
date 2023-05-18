@@ -43,7 +43,7 @@ const comments = await getComments(frontmatter.id)
     <div class="container">
         <img src={frontmatter.banner.url} width="100%" alt={frontmatter.image.alt} />
         <div class="centered">
-            {frontmatter.banner.title}
+            <h1>{frontmatter.banner.title}</h1>
         </div>
     </div>
 
@@ -103,13 +103,18 @@ const comments = await getComments(frontmatter.id)
         }
 
         .centered {
+            color: black;
+            text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
             font-size: xx-large;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
+        .centered .h1 {
+          
+        }
         .comment-form {
             width: 100%;
             display: flex;
