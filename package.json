@@ -10,9 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^2.2.3",
     "@astrojs/preact": "^2.1.0",
     "@astrojs/rss": "^2.4.0",
-    "astro": "^2.3.0",
+    "astro": "^2.5.0",
     "aws-sdk": "^2.1379.0",
     "crypto-js": "^4.1.1",
     "fuse.js": "^6.6.2",
