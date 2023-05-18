@@ -1,5 +1,6 @@
 import { Client } from "pg"
-if (process.env.NETLIFY !== 'true') {
+console.log(process.env.NODE_ENV)
+if (process.env.NODE_ENV !== 'production') {
     import("node:process")
     import("dotenv").then((dotenv) => dotenv.config())
 }
