@@ -1,5 +1,17 @@
 ---
+import { getAllUsers } from "../../db/cockroachdb/select.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Fuse from "fuse.js";
+
+const allUsers = await getAllUsers();
+
+let users = null;
+if (Astro.request.method === "POST") {
+    const data = await Astro.request.formData();
+    const username = data.get("username");
+    const fuse = new Fuse(allUsers);
+    users = fuse.search(username.toString()).map((user) => user.item);
+}
 ---
 
 <style>
@@ -8,8 +20,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         gap: 1rem;
     }
 
-    .user-search input,
-    .user-search button {
+    .user-search input {
         background-color: rgb(220, 220, 220);
         color: rgb(0, 0, 0);
         border: solid rgb(109, 109, 109) 4px;
@@ -17,15 +28,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         padding: 0.5rem;
     }
 
-    .user-search button:active {
+    .user-search input[type="submit"]:active {
         background-color: #ff9776;
     }
 
-    .center{
+    .center {
         align-self: center;
     }
 
-    #resultContainer{
+    #resultContainer {
         display: flex;
         flex-direction: column;
     }
@@ -34,14 +45,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <BaseLayout>
     <div class="center">
         <label for="searchBar">Search for a user</label>
-        <div class="user-search">
-            <input type="text" id="searchBar" />
-            <button id="searchButton">Search</button>
+        <form method="POST">
+            <div class="user-search">
+                <input type="text" id="searchBar" name="username" />
+                <input type="submit" id="searchButton" value="Search" />
+            </div>
+        </form>
+        <div id="resultContainer">
+            {users && users.map((user) => <a href={user} class="green-link">{user}</a>)}
         </div>
-        <div id="resultContainer"></div>
     </div>
-    <div></div>
 </BaseLayout>
-
-<script src={Astro.resolve("../../scripts/search.js")} type="module">
-</script>
+<div></div>
