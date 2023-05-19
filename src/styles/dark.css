@@ -101,3 +101,13 @@ html.dark {
 .dark .comment-form input[type="submit"]:disabled{
     color: gray;
 }
+
+.dark #searchBar, #searchButton{
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border: solid rgb(34, 34, 34) 4px;
+}
+
+.dark #searchButton:active{
+    background-color: #00ff9c;
+}

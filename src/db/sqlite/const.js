@@ -1,0 +1,1 @@
+export const sqlitePath = './src/db/sqlite/astroDB.sqlite'

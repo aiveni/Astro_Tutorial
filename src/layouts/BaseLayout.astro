@@ -43,7 +43,6 @@ const { pageTitle } = Astro.props;
     const greenLink = document.getElementById("greenLink");
     if (greenLink) {
         greenLink.addEventListener("click", () => {
-            console.log("mereketengue");
             document.cookie = "user=;Path=/;Expires= 11 Sep 2001 00:00:00 GMT;";
         });
     }

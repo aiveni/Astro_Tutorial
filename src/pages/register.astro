@@ -17,7 +17,6 @@ if (Astro.request.method === "POST") {
     const password = data.get("password");
     const email = data.get("email");
 
-    console.log(await userExists(username))
     if(username == "browse" || await userExists(username)){
         errors.username = "username exists"
     }else{

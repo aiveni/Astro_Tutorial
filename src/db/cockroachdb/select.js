@@ -66,7 +66,6 @@ export const getComments = async (post) => {
                     console.log(err)
                     reject(err)
                 } else{
-                    console.log(res.rows)
                     resolve(res.rows)
                 }
             })

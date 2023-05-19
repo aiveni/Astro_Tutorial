@@ -3,7 +3,6 @@ import { getAllUsers } from "../../db/cockroachdb/select.js";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allUsers = await getAllUsers();
-
 ---
 
 <style>
@@ -24,14 +23,27 @@ const allUsers = await getAllUsers();
     .user-search button:active {
         background-color: #ff9776;
     }
+
+    .center{
+        align-self: center;
+    }
+
+    #resultContainer{
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 
 <BaseLayout>
-    <label for="searchBar">Search for a user</label>
-    <div class="user-search">
-        <input type="text" id="searchBar" />
-        <button id="searchButton">Search</button>
+    <div class="center">
+        <label for="searchBar">Search for a user</label>
+        <div class="user-search">
+            <input type="text" id="searchBar" />
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="resultContainer"></div>
     </div>
+    <div></div>
 </BaseLayout>
 
 <script define:vars={{ allUsers }} type="module">
@@ -39,21 +51,30 @@ const allUsers = await getAllUsers();
 
     const searchButton = document.getElementById("searchButton");
     const searchBar = document.getElementById("searchBar");
+    const resultContainer = document.getElementById("resultContainer");
     const fuse = new Fuse(allUsers);
 
-    console.log(allUsers);
-
-    if(searchBar){
+    if (searchBar) {
         searchBar.addEventListener("change", (event) => {
-            console.log(event.target.value)
-        }) 
+            console.log(event.target.value);
+        });
     }
 
     console.log(1);
-    if (searchButton && searchBar) {
+    if (searchButton && searchBar && resultContainer) {
         console.log(2);
         searchButton.addEventListener("click", () => {
-            console.log(fuse.search(searchBar.value));
+            console.log("AAAA")
+            resultContainer.innerHTML = "";
+            let searchResult = fuse.search(searchBar.value);
+            searchResult.forEach((result) => {
+                let userLink = document.createElement("a")
+                userLink.setAttribute("href", result.item)
+                userLink.setAttribute("class", "green-link")
+                userLink.setAttribute("style", "margin-top: 1rem")
+                userLink.innerText = result.item
+                resultContainer.appendChild(userLink);
+            });
         });
     }
 </script>

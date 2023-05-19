@@ -1,7 +1,9 @@
 import sqlite3 from 'sqlite3';
 
+import {sqlitePath} from './src/db/sqlite/const.js'
+
 export const userExists = (username) => {
-    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    const db = new sqlite3.Database(sqlitePath);
     return new Promise((resolve, reject) => {
         db.get("SELECT * FROM User WHERE username = ?", [username], function (err, row) {
             if (err) {
@@ -19,7 +21,7 @@ export const userExists = (username) => {
 }
 
 export const correctLogin = (username, password) => {
-    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    const db = new sqlite3.Database(sqlitePath);
     return new Promise((resolve, reject) => {
         db.get("SELECT * FROM User WHERE username = ? and password = ?", [username, password], function (err, row) {
             if (err) {
@@ -37,7 +39,7 @@ export const correctLogin = (username, password) => {
 }
 
 export const getAllUsers = () => {
-    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    const db = new sqlite3.Database(sqlitePath);
     return new Promise((resolve, reject) => {
         db.all("SELECT username FROM User", [], function (err, rows) {
             if (err) {
@@ -51,7 +53,7 @@ export const getAllUsers = () => {
 }
 
 export const getComments = (post) => {
-    const db = new sqlite3.Database('./src/db/astroDB.sqlite');
+    const db = new sqlite3.Database(sqlitePath);
     return new Promise((resolve, reject) => {
         db.all("SELECT comment, user FROM Comment WHERE post = ?", [post], function (err, rows) {
             if (err) {
