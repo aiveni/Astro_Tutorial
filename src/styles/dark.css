@@ -65,7 +65,7 @@ html.dark {
     box-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
 }
 
-.dark h2 {
+.dark .section-header {
     border-bottom-color: rgba(255, 255, 255, 0.247);
     text-shadow: 0 0 10px #00ff9c, 0 0 20px #00ff9c, 0 0 30px #00ff9c;
 }
@@ -85,4 +85,19 @@ html.dark {
 
 .dark #userIcon svg{
   fill: white;
+}
+
+.dark .green-link{
+    color: #00ff9c
+}
+
+/* Post comments */
+.dark .comment-form input {
+    background-color: rgb(75, 75, 75);
+    color: white;
+    border: solid rgb(34, 34, 34) 4px;
+}
+
+.dark .comment-form input[type="submit"]:disabled{
+    color: gray;
 }

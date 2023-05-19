@@ -1,105 +1,147 @@
 ---
-import { toAttributeString } from "astro/dist/runtime/server/render/util";
+import CryptoJS from "crypto-js";
 
 import BaseLayout from "./BaseLayout.astro";
+import CardContainer from "../components/CardContainer.astro";
+import Comment from "../components/Comment.astro"
+import { addComment } from "../db/cockroachdb/insert.js";
+import { userExists, getComments } from "../db/cockroachdb/select.js";
 
 const { frontmatter } = Astro.props;
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const myTags = frontmatter.tags;
 const myPosts = allPosts.filter((post) => {
-  return myTags.some(
-    (tag) =>
-      post.frontmatter.tags.includes(tag) &&
-      post.frontmatter.banner.title != frontmatter.banner.title
-  );
+    return myTags.some(
+        (tag) => post.frontmatter.tags.includes(tag) && post.frontmatter.banner.title != frontmatter.banner.title
+    );
 });
 
-import Card from "../components/Card.astro";
+let user = undefined;
+if (Astro.cookies.has("user")) {
+    const secretKey = import.meta.env.SECRET_KEY;
+    const encryptedUsername = Astro.cookies.get("user").value;
+    const username = CryptoJS.AES.decrypt(encryptedUsername, secretKey).toString(CryptoJS.enc.Utf8);
+    if (await userExists(username)) {
+        user = username;
+    }
+}
+
+if (Astro.request.method === "POST") {
+    const data = await Astro.request.formData();
+    const comment = data.get("comment");
+    const username = data.get("user");
+    const post = data.get("post");
+    if (userExists(username)) {
+        await addComment(comment, post, username);
+    }
+}
+
+const comments = await getComments(frontmatter.id)
 ---
 
 <BaseLayout>
-  <div class="container">
-    <img
-      src={frontmatter.banner.url}
-      width="100%"
-      alt={frontmatter.image.alt}
-    />
-    <div class="centered">
-      {frontmatter.banner.title}
+    <div class="container">
+        <img src={frontmatter.banner.url} width="100%" alt={frontmatter.image.alt} />
+        <div class="centered">
+            <h1>{frontmatter.banner.title}</h1>
+        </div>
     </div>
-  </div>
 
-  <p>Written by {frontmatter.author}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <div class="tags">
+    <p>Written by {frontmatter.author}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <div class="tags">
+        {
+            frontmatter.tags.map((tag) => (
+                <p class="tag">
+                    <a href={`/tags/${tag}`}>{tag}</a>
+                </p>
+            ))
+        }
+    </div>
+    <slot />
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+    <h2 class="section-header">Comments</h2>
+
+	{user == undefined && <p style="color:rgb(195, 21, 21);">Log in to submit a comment</p>}
+    <form class="comment-form" method="POST">
+        <input type="text" name="comment" autocomplete="off"/>
+        <input type="hidden" value={user} name="user" />
+        <input type="hidden" value={frontmatter.id} name="post" />
+        {user == undefined ? <input type="submit" value="Comment" disabled /> : <input type="submit" value="Comment" />}
+    </form>
+	{comments.map((comment) => <Comment user={comment.user} comment={comment.comment}/>)}
+
+
     {
-      frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
-
-  <slot />
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
-  <style>
-    a {
-      color: #00539f;
+        myPosts.length > 0 && (
+            <>
+                <h2 class="section-header">Related Posts</h2>
+                <CardContainer posts={myPosts} />
+            </>
+        )
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
+    <style>
+        a {
+            color: #00539f;
+        }
 
-    .tag {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: 0.5em;
-      padding: 0.5em 1em;
-      font-size: 1.15em;
-      background-color: #f8fcfd;
-    }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
 
-    .centered {
-      font-size: xx-large;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
+        .tag {
+            margin: 0.25em;
+            border: dotted 1px #a1a1a1;
+            border-radius: 0.5em;
+            padding: 0.5em 1em;
+            font-size: 1.15em;
+            background-color: #f8fcfd;
+        }
 
+        .centered {
+            color: black;
+            text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+               2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+            font-size: xx-large;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .centered .h1 {
+          
+        }
+        .comment-form {
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+			margin-bottom: 2rem;
+        }
 
+        .comment-form input {
+            background-color: rgb(220, 220, 220);
+            color: rgb(0, 0, 0);
+            border: solid rgb(109, 109, 109) 4px;
+            border-radius: 10px;
+            padding: 0.5rem;
+        }
 
-h2 {
-  border-bottom: 5px solid black; /* add a line below the heading */
-  padding-bottom: 10px; /* add some space between the heading and the line */
-}
+        .comment-form input[type="text"] {
+            flex-grow: 9;
+            flex-basis: 0;
+        }
 
-  </style>
+        .comment-form input[type="submit"] {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
 
-  
-  <h2>Related Posts</h2>
-  <div class="row card-container">
-    {
-      myPosts.map((post) => (
-        //<BlogPost url={post.url} title={post.frontmatter.banner.title} />
-        <Card
-          url={post.url}
-          title={post.frontmatter.banner.title}
-          description={post.frontmatter.description}
-          image={post.frontmatter.banner.url}
-        ></Card>
-      ))
-    }
-  </div>
+		.comment-form input[type="submit"]:disabled{
+			color: gray;
+		}
+    </style>
 </BaseLayout>

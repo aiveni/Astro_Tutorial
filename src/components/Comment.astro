@@ -1,0 +1,15 @@
+---
+const { user, comment } = Astro.props;
+---
+
+<style>
+    .comment-container {
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<div class="comment-container">
+    <a href=`/profile/${user}` class="green-link">{user}</a>
+    <p>{comment}</p>
+</div>

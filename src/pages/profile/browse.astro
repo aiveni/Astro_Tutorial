@@ -1,0 +1,59 @@
+---
+import { getAllUsers } from "../../db/cockroachdb/select.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allUsers = await getAllUsers();
+
+---
+
+<style>
+    .user-search {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .user-search input,
+    .user-search button {
+        background-color: rgb(220, 220, 220);
+        color: rgb(0, 0, 0);
+        border: solid rgb(109, 109, 109) 4px;
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+
+    .user-search button:active {
+        background-color: #ff9776;
+    }
+</style>
+
+<BaseLayout>
+    <label for="searchBar">Search for a user</label>
+    <div class="user-search">
+        <input type="text" id="searchBar" />
+        <button id="searchButton">Search</button>
+    </div>
+</BaseLayout>
+
+<script define:vars={{ allUsers }} type="module">
+    import Fuse from "../../../node_modules/fuse.js";
+
+    const searchButton = document.getElementById("searchButton");
+    const searchBar = document.getElementById("searchBar");
+    const fuse = new Fuse(allUsers);
+
+    console.log(allUsers);
+
+    if(searchBar){
+        searchBar.addEventListener("change", (event) => {
+            console.log(event.target.value)
+        }) 
+    }
+
+    console.log(1);
+    if (searchButton && searchBar) {
+        console.log(2);
+        searchButton.addEventListener("click", () => {
+            console.log(fuse.search(searchBar.value));
+        });
+    }
+</script>

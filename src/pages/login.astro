@@ -2,7 +2,7 @@
 import "../styles/forms.css";
 import "../styles/dark.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { correctLogin, getAllUsers } from "../db/select.js";
+import { correctLogin, getAllUsers } from "../db/cockroachdb/select.js";
 import CryptoJS from "crypto-js";
 
 let error = "";
@@ -27,7 +27,7 @@ if (Astro.request.method === "POST") {
 
 <BaseLayout>
     <div class="form-container">
-        <form action="./login" method="post">
+        <form method="post">
             <label for="username">
                 Username
                 <br />
@@ -44,4 +44,5 @@ if (Astro.request.method === "POST") {
             <input type="submit" id="loginButton" value="Login" />
         </form>
     </div>
+    <a href="/register" class="green-link">Don't have an account yet?</a>
 </BaseLayout>

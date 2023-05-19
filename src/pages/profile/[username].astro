@@ -1,11 +1,26 @@
 ---
-import { getAllUsers } from "../../db/select.js";
+import { getAllUsers } from "../../db/cockroachdb/select.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+import CardContainer from "../../components/CardContainer.astro";
 
 const { username } = Astro.params;
-const allUsers = await getAllUsers()
-const userExists = allUsers.includes(username)
+const allUsers = await getAllUsers();
+console.log(allUsers)
+const userExists = allUsers.includes(username);
+const allPosts = await Astro.glob("../posts/*.md");
+const authoredPosts = allPosts.filter((post) => post.frontmatter.author == username);
+const pageTitle = userExists ? `${username}'s profile` : `User "${username}" doesn't exist`;
 ---
 
-<p>
-    {userExists ? username : "Eres tonto o te pegan en casa?"}
-</p>
+<BaseLayout pageTitle={pageTitle}>
+    {
+        userExists && (
+            <>
+                <h2 class="section-header">Authored posts:</h2>
+                <CardContainer posts={authoredPosts} />
+            </>
+        )
+    }
+    <a href="./browse" class="green-link">Browse for other users</a>
+</BaseLayout>

@@ -10,14 +10,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^2.2.3",
     "@astrojs/preact": "^2.1.0",
     "@astrojs/rss": "^2.4.0",
-    "astro": "^2.3.0",
+    "astro": "^2.5.0",
     "aws-sdk": "^2.1379.0",
     "crypto-js": "^4.1.1",
+    "fuse.js": "^6.6.2",
     "mock-aws-s3": "^4.0.2",
     "nock": "^13.3.1",
+    "pg": "^8.11.0",
     "preact": "^10.13.2",
     "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }
