@@ -47,7 +47,7 @@ const allUsers = await getAllUsers();
 </BaseLayout>
 
 <script define:vars={{ allUsers }} type="module">
-    import Fuse from "../../../node_modules/fuse.js";
+    import Fuse from "fuse.js";
 
     const searchButton = document.getElementById("searchButton");
     const searchBar = document.getElementById("searchBar");
