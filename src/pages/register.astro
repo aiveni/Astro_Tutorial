@@ -1,6 +1,6 @@
 ---
-import { createUser } from "../db/insert.js";
-import { userExists } from "../db/select.js"
+import { createUser } from "../db/cockroachdb/insert.js";
+import { userExists } from "../db/cockroachdb/select.js"
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/forms.css"
 import "../styles/dark.css"
@@ -18,7 +18,7 @@ if (Astro.request.method === "POST") {
     const email = data.get("email");
 
     console.log(await userExists(username))
-    if(await userExists(username)){
+    if(username == "browse" || await userExists(username)){
         errors.username = "username exists"
     }else{
         createUser(username, password, email)
